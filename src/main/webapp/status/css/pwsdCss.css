@@ -1,0 +1,117 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+}
+
+h1 {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="text"]{
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+input[type="button"] {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+.progress-bar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.progress-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-circle.success {
+    background-color: #4CAF50;
+}
+
+.progress-label {
+    font-weight: bold;
+}
+
+.form-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.form-row label,
+.form-row input,
+.form-row img,
+.form-row span{
+    margin-right: 20px;
+}
+
+.verification-icon{
+    position: absolute;
+    margin-left: 165px;
+}
+
+#ka{
+    width: 35%;
+}
+#reset{
+    width: 40px;
+    height: 35px;
+    border-radius: 50%;
+}
+#reset:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+#verification {
+    width: 50%;
+}
+
+.password-link {
+    color: #8E8AC8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.password-link:hover {
+    color: #6D69A7;
+}

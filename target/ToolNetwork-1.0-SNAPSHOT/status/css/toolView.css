@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+
+.container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#image img {
+    max-width: 100%;
+    height: auto;
+}
+
+#details {
+    margin-bottom: 10px;
+}
+
+#html-content {
+    background-color: #f1f1f1;
+    border: 2px solid #999;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.back-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.collect-button {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    padding: 10px 40px;
+    background-color: #4CAF50; /* Green background color */
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+.collect-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+.back-button:hover {
+    background-color: #555;
+}
+
+#user-comments {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#user-comments h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+#comment-container {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #f1f1f1;
+    border: 2px solid #999;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.comment {
+    margin-bottom: 10px;
+}
+
+.publish-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.publish-button:hover {
+    background-color: #555;
+}
+
+#comment-input {
+    margin-top: 10px;
+    text-align: center;
+}
+
+#comment-textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 5px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+#publish-button{
+    margin-top: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#publish-button:hover {
+    background-color: #555;
+}
