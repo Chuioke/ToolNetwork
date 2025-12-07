@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Register</title>
@@ -15,12 +16,15 @@
 <div class="container">
     <img src="${pageContext.request.contextPath}/status/images/Title.png" class="logo" title="工具网" alt="工具网" width="50px" height="50px"/>
     <h1>Register</h1>
-    <form action="${pageContext.request.contextPath}/status/jsp/toollistHead.jsp" method="post" id="myForm">
+    <c:if test="${not empty message}">
+        <p style="color: #f27474">${message}</p>
+    </c:if>
+    <form action="${pageContext.request.contextPath}/user/register" method="post" id="myForm">
         <label for="username">用户名:</label>
-        <input type="text" id="username" name="username" required placeholder="用户名必须5个字符以上"><span></span>
+        <input type="text" id="username" name="userName" required placeholder="用户名必须5个字符以上"><span></span>
 
         <label for="password">密码:</label>
-        <input type="password" id="password" name="password" required placeholder="密码长度必须为10位以上且至少一个大写字母"><span></span>
+        <input type="password" id="password" name="userPwd" required placeholder="密码长度必须为10位以上且至少一个大写字母"><span></span>
 
         <label for="password">确认密码:</label>
         <input type="password" id="RePassword" name="RePassword" required><span></span>

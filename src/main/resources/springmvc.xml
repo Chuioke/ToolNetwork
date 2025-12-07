@@ -12,12 +12,9 @@
     <context:property-placeholder location="classpath:mail.properties"/>
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/**/*"/>-->
-<!--            <mvc:exclude-mapping path="/user/getUser"/>-->
-<!--            <mvc:exclude-mapping path="/user/pwdmodify"/>-->
-<!--            <bean class="com.bdqn.Interceptor.Context"/>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 </beans>

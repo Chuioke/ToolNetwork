@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gc.dao.UserDao">
+    <resultMap id="userMap" type="com.gc.bean.User">
+        <id property="user_id" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="userPwd" column="user_pwd"/>
+        <result property="email" column="email"/>
+    </resultMap>
+
+    <select id="getUser" parameterType="com.gc.bean.User" resultMap="userMap">
+        select user_id,user_name,user_pwd,email
+        from users
+        where user_name = #{userName}
+          and user_pwd = #{userPwd}
+    </select>
+
+    <select id="findByUserName" parameterType="string" resultMap="userMap">
+        select user_id,user_name,user_pwd,email
+        from users
+        where user_name = #{userName}
+        limit 1
+    </select>
+
+    <insert id="addUser" parameterType="com.gc.bean.User" useGeneratedKeys="true" keyProperty="user_id">
+        insert into users(user_name, user_pwd, email)
+        values (#{userName}, #{userPwd}, #{email})
+    </insert>
+</mapper>
