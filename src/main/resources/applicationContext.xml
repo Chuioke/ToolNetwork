@@ -18,9 +18,15 @@
         <property name="username" value="${jdbc.userName}"/>
         <property name="password" value="${jdbc.password}"/>
     </bean>
-    <bean class="org.mybatis.spring.SqlSessionFactoryBean">
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="typeAliasesPackage" value="com.gc.bean"/>
+        <property name="mapperLocations" value="classpath*:mappers/*.xml"/>
+        <property name="configuration">
+            <bean class="org.apache.ibatis.session.Configuration">
+                <property name="mapUnderscoreToCamelCase" value="true"/>
+            </bean>
+        </property>
         <!--设置分页-->
         <property name="plugins">
             <array>
@@ -39,22 +45,23 @@
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.gc.dao"/>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
     <!--Kaptcha 配置-->
-    <bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha"> <!--定义bean-->
-        <property name="config"> <!--设置bean属性config-->
-            <bean class="com.google.code.kaptcha.util.Config"><!--定义Config的bean，它是kaptcha的配置类-->
-                <constructor-arg>   <!--设置`Config`bean的构造参数-->
-                    <props> <!--定义一个属性列表，包含多个属性键值对-->
-                        <prop key="kaptcha.border">no</prop>    <!--设置验证码图片的边框是否显示-->
-                        <prop key="kaptcha.image.width">200</prop><!--设置验证码图片的宽度-->
-                        <prop key="kaptcha.image.height">50</prop><!--设置验证码图片的高度-->
-                        <prop key="kaptcha.textproducer.char.string">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890</prop><!--设置验证码字符的取值范围-->
-                        <prop key="kaptcha.textproducer.char.length">4</prop><!--设置验证码的字符长度-->
-                        <prop key="kaptcha.textproducer.font.size">40</prop><!--设置验证码文字的字体大小-->
-                        <prop key="kaptcha.textproducer.font.color">black</prop><!--设置验证码文字的字体颜色-->
-                        <prop key="kaptcha.textproducer.char.space">5</prop><!--设置验证码字符之间的间距-->
-                        <prop key="kaptcha.noise.color">black</prop><!--设置验证码干扰线的颜色-->
+    <bean id="captchaProducer" class="com.google.code.kaptcha.impl.DefaultKaptcha">
+        <property name="config">
+            <bean class="com.google.code.kaptcha.util.Config">
+                <constructor-arg>
+                    <props>
+                        <prop key="kaptcha.border">no</prop>
+                        <prop key="kaptcha.image.width">200</prop>
+                        <prop key="kaptcha.image.height">50</prop>
+                        <prop key="kaptcha.textproducer.char.string">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890</prop>
+                        <prop key="kaptcha.textproducer.char.length">4</prop>
+                        <prop key="kaptcha.textproducer.font.size">40</prop>
+                        <prop key="kaptcha.textproducer.font.color">black</prop>
+                        <prop key="kaptcha.textproducer.char.space">5</prop>
+                        <prop key="kaptcha.noise.color">black</prop>
                     </props>
                 </constructor-arg>
             </bean>
